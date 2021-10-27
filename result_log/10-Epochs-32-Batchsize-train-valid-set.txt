@@ -1,0 +1,19 @@
+75614/75614 [==============================] - 2514s 33ms/step - loss: 2.2382 - accuracy: 0.4470 - val_loss: 1.4697 - val_accuracy: 0.6028
+Epoch 2/10
+75614/75614 [==============================] - 2485s 33ms/step - loss: 1.4281 - accuracy: 0.6127 - val_loss: 1.3574 - val_accuracy: 0.6322
+Epoch 3/10
+75614/75614 [==============================] - 2477s 33ms/step - loss: 1.2258 - accuracy: 0.6612 - val_loss: 1.1980 - val_accuracy: 0.6708
+Epoch 4/10
+75614/75614 [==============================] - 2439s 32ms/step - loss: 1.1162 - accuracy: 0.6883 - val_loss: 1.2056 - val_accuracy: 0.6708
+Epoch 5/10
+75614/75614 [==============================] - 2456s 32ms/step - loss: 1.0457 - accuracy: 0.7056 - val_loss: 1.0830 - val_accuracy: 0.6997
+Epoch 6/10
+75614/75614 [==============================] - 2451s 32ms/step - loss: 0.9919 - accuracy: 0.7183 - val_loss: 1.1035 - val_accuracy: 0.6954
+Epoch 7/10
+75614/75614 [==============================] - 2437s 32ms/step - loss: 0.9523 - accuracy: 0.7281 - val_loss: 1.0779 - val_accuracy: 0.7027
+Epoch 8/10
+75614/75614 [==============================] - 2452s 32ms/step - loss: 0.9194 - accuracy: 0.7362 - val_loss: 1.0468 - val_accuracy: 0.7132
+Epoch 9/10
+75614/75614 [==============================] - 2674s 35ms/step - loss: 0.8922 - accuracy: 0.7428 - val_loss: 1.0522 - val_accuracy: 0.7122
+Epoch 10/10
+75614/75614 [==============================] - 2491s 33ms/step - loss: 0.8658 - accuracy: 0.7491 - val_loss: 1.0419 - val_accuracy: 0.71488
