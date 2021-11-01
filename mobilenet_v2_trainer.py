@@ -7,6 +7,7 @@ import PIL
 from PIL import Image
 import numpy as np
 import pathlib
+from pathlib import Path
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications import imagenet_utils
 import math
@@ -21,6 +22,7 @@ project_root_path = pathlib.Path(__file__).parent.resolve()
 pretrained_model_root_path = os.path.join(project_root_path, 'trained_model')
 model_name = 'mobilenetv2'
 pretrained_model_path = os.path.join(pretrained_model_root_path, model_name)
+Path(pretrained_model_path).mkdir(parents=True, exist_ok=True)
 
 # function of interpreting label id to label name
 def interpret_result_to_label(label_mapping_list, label_id):
@@ -35,7 +37,8 @@ if train_again or pretrained_model_is_empty:
   # set up GPU to avoid cublas error
   physical_devices = tf.config.experimental.list_physical_devices('GPU')
   print("Num GPUs Available: ", len(physical_devices))
-  tf.config.experimental.set_memory_growth(physical_devices[0], True)
+  if len(physical_devices) !=0:
+    tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
   # download dataset and prepare label mapping list
   coco2014_cropped_train, info_train = tfds.load('coco2014_cropped_images', split='train', shuffle_files=True, with_info=True, as_supervised=True)
@@ -74,7 +77,7 @@ else:
   'Pretrained {model} exists, no need to train from scratch.'
   load_model_path = pretrained_model_path
   model = tf.keras.models.load_model(load_model_path)
-  label_mapping_file = open('coco2014_labels.txt', 'r')
+  label_mapping_file = open(os.path.join(project_root_path, 'coco2014_labels.txt'), 'r')
   label_mapping_list = label_mapping_file.readlines()
   label_mapping_file.close()
 

@@ -90,10 +90,10 @@ else:
 '''
 
 # download dataset and prepare label mapping file
-coco_train, info_train = tfds.load('coco/2014', split='train', data_dir=train_path, shuffle_files=False, with_info=True, download=False)
-coco_validation, info_test = tfds.load('coco/2014', split='validation', data_dir=train_path, shuffle_files=False, with_info=True, download=False)
-coco_test, info_test = tfds.load('coco/2014', split='test', data_dir=train_path, shuffle_files=False, with_info=True, download=False)
-label_mapping_file = open('coco2014_labels.txt', 'r')
+coco_train, info_train = tfds.load('coco/2014', split='train', data_dir=train_path, shuffle_files=False, with_info=True, download=True)
+coco_validation, info_test = tfds.load('coco/2014', split='validation', data_dir=validation_path, shuffle_files=False, with_info=True, download=True)
+coco_test, info_test = tfds.load('coco/2014', split='test', data_dir=test_path, shuffle_files=False, with_info=True, download=True)
+label_mapping_file = open(os.path.join(project_root_path, 'coco2014_labels.txt'), 'r')
 label_mapping_list = label_mapping_file.readlines()
 label_mapping_file.close()
 

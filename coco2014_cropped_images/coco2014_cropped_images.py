@@ -4,11 +4,11 @@ import tensorflow_datasets as tfds
 import pathlib
 from pathlib import Path
 
-project_root_path = Path(__file).parent.parent.resolve()
+project_root_path = Path(__file__).parent.parent.resolve()
 coco_bbox_images_path = os.path.join(project_root_path, 'dataset', 'coco', 'bbox_images')
-train_path = os.path.join(coco_path, 'train2014')
-validation_path = os.path.join(coco_path, 'validation2014')
-test_path = os.path.join(coco_path, 'test2014')
+train_path = os.path.join(coco_bbox_images_path, 'train2014')
+validation_path = os.path.join(coco_bbox_images_path, 'validation2014')
+test_path = os.path.join(coco_bbox_images_path, 'test2014')
 
 # TODO(coco2014_cropped_images): Markdown description  that will appear on the catalog page.
 _DESCRIPTION = """
